@@ -13,9 +13,8 @@ This is an adventure game that jholtane and I are building incrementally for lea
 - [x] The character does not face both trials. Instead, only one is chosen (at random, 50% chance each).
 - [x] There exists a 3rd type of challenge (stamina/wit/intelligence/charm) that is faced if the character does not face either of the previous challenges.
 - [x] The character faces 5 trials, randomly selected from the pool of various (3-6 or so) trials we've created.
-- [ ] The challenges are proportionally equally likely to occur.
-
-[//]: # (- [ ] At the beginning of the game, the character has 5 health. When they fail a challenge, they lose 1 health. After the 10 challenges, if the character has any health remaining, they get the happy ending. If they have no health remaining, they get the bad ending.)
-[//]: # (abstract out the challenges)
-[//]: # (character class?)
-[//]: # (challenge class?)
+- [x] There exists a 4th type of challenge.
+- [x] (refactor) the challenges exist as separate methods (e.g. trialOfStrength(), trialOfSpeed(), ...)
+- [ ] ~~(refactor) there exists a class for challenges.~~
+- [x] The challenges are equally likely to occur.
+- [ ] At the beginning of the game, the character has 3 health. When they fail a challenge, they lose 1 health. After the 5 challenges, if the character has any health remaining, they get the happy ending. If they have no health remaining, they get the bad ending.
