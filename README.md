@@ -17,4 +17,6 @@ This is an adventure game that jholtane and I are building incrementally for lea
 - [x] (refactor) the challenges exist as separate methods (e.g. trialOfStrength(), trialOfSpeed(), ...)
 - [ ] ~~(refactor) there exists a class for challenges.~~
 - [x] The challenges are equally likely to occur.
-- [ ] At the beginning of the game, the character has 3 health. When they fail a challenge, they lose 1 health. After the 5 challenges, if the character has any health remaining, they get the happy ending. If they have no health remaining, they get the bad ending.
+- [x] At the beginning of the game, the character has 3 health.
+- [ ] After each challenge, the player's current health is printed
+- [ ] When they fail a challenge, they lose 1 health. After the 5 challenges, if the character has any health remaining, they get the happy ending. If they have no health remaining, they get the bad ending.
