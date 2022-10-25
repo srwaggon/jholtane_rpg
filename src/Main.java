@@ -15,14 +15,13 @@ public class Main {
     System.out.println(introductionMessage);
     if (Objects.equals(readPlayerDescription, desiredAttribute)) { // the character passes a challenge
       System.out.println(successMessage);
-      return currentHealth;
     } else { //when a character fails a challenge
       // they lose 1 health (during challenge failure)
       int damage = 1;
       currentHealth = currentHealth - damage;
       System.out.println(failureMessage);
-      return currentHealth;
     }
+    return currentHealth;
   }
 
   public static int strengthTest(String readPlayerDescription, int currentHealth) {
@@ -31,36 +30,35 @@ public class Main {
     String successMessage = "You push the boulder aside!";
     String failureMessage = "You failed to move the boulder.";
 
-    int currentHealthAfterChallenge = performChallenge(readPlayerDescription, introductionMessage, desiredAttribute, successMessage, failureMessage, currentHealth);
-    return currentHealthAfterChallenge;
+    return performChallenge(readPlayerDescription, introductionMessage, desiredAttribute, successMessage, failureMessage, currentHealth);
   }
 
-  public static void speedTest(String readPlayerDescription) {
+  public static int speedTest(String readPlayerDescription, int currentHealth) {
     String introductionMessage = "There is a wet log you must traverse.";
     String desiredAttribute = "fast";
     String successMessage = "You successfully cross the log!";
     String failureMessage = "You fall into the river.";
 
-//    performChallenge(readPlayerDescription, introductionMessage, desiredAttribute, successMessage, failureMessage);
+    return performChallenge(readPlayerDescription, introductionMessage, desiredAttribute, successMessage, failureMessage, currentHealth);
   }
 
-  public static void charmTest(String readPlayerDescription) {
+  public static int charmTest(String readPlayerDescription, int currentHealth) {
     String introductionMessage = "A sexy bard is trying to swoon you.";
     String desiredAttribute = "charm";
     String successMessage = "The bard is flaccid";
     String failureMessage = "The bard sexually assaults you.";
 
-//    performChallenge(readPlayerDescription, introductionMessage, desiredAttribute, successMessage, failureMessage);
+    return performChallenge(readPlayerDescription, introductionMessage, desiredAttribute, successMessage, failureMessage, currentHealth);
   }
 
-  public static void witTest(String readPlayerDescription) {
+  public static int witTest(String readPlayerDescription, int currentHealth) {
     String introductionMessage = "A wizard blocks your way.";
     String desiredAttribute = "smart";
 
     String successMessage = "You tactfully confuse the wizard.";
     String failureMessage = "The wizard zaps you unmercifully.";
 
-//    performChallenge(readPlayerDescription, introductionMessage, desiredAttribute, successMessage, failureMessage);
+    return performChallenge(readPlayerDescription, introductionMessage, desiredAttribute, successMessage, failureMessage, currentHealth);
   }
 
   public static void main(String[] args) {
@@ -85,11 +83,11 @@ public class Main {
       if (sideOfDie == 0) {
         currentHealth = strengthTest(readPlayerDescription, currentHealth);
       } else if (sideOfDie == 1) {
-        speedTest(readPlayerDescription);
+        currentHealth = speedTest(readPlayerDescription, currentHealth);
       } else if (sideOfDie == 2) {
-        charmTest(readPlayerDescription);
+        currentHealth = charmTest(readPlayerDescription, currentHealth);
       } else {
-        witTest(readPlayerDescription);
+        currentHealth = witTest(readPlayerDescription, currentHealth);
       }
       System.out.println("Your current health: " + currentHealth);
     }
