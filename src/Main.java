@@ -18,7 +18,7 @@ public class Main {
     } else { //when a character fails a challenge
       // they lose 1 health (during challenge failure)
       int damage = 1;
-      currentHealth = currentHealth - damage;
+      currentHealth -= damage;
       System.out.println(failureMessage);
     }
     return currentHealth;
@@ -54,7 +54,6 @@ public class Main {
   public static int witTest(String readPlayerDescription, int currentHealth) {
     String introductionMessage = "A wizard blocks your way.";
     String desiredAttribute = "smart";
-
     String successMessage = "You tactfully confuse the wizard.";
     String failureMessage = "The wizard zaps you unmercifully.";
 
@@ -73,6 +72,7 @@ public class Main {
     System.out.println(readPlayerName + " you must defeat the BBEG! Your " + readPlayerDescription + " will be helpful.");
 
     int currentHealth = 3;
+    System.out.println(readPlayerDescription + " Your starting health is: " + currentHealth);
 
     for (int i = 0; i < 5; i++) {
 
@@ -89,7 +89,7 @@ public class Main {
       } else {
         currentHealth = witTest(readPlayerDescription, currentHealth);
       }
-      System.out.println("Your current health: " + currentHealth);
+      System.out.println("Your current health is now: " + currentHealth);
     }
 
     // show ending (good if health is nonnegative, bad if negative)
