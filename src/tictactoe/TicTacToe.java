@@ -13,7 +13,9 @@ package tictactoe;
 import java.util.Scanner;
 
 public class TicTacToe {
-
+// With the addition of a second player
+// Is it now necessary to separate player row/column
+// to playerOneRow playerTwoRow?
   private static String potentialPlayerOneMoves(
       String playerOne, int playerRow, int playerColumn,
       String board00, String board01, String board02,
@@ -43,7 +45,35 @@ public class TicTacToe {
     }
     return "";
   }
-
+  private static String potentialPlayerTwoMoves(
+          String playerTwo, int playerRow, int playerColumn,
+          String board00, String board01, String board02,
+          String board03, String board04, String board05,
+          String board06, String board07, String board08
+  ) {
+    if (playerRow == 0 && playerColumn == 0) {
+      board00 = playerTwo;
+    } else if (playerRow == 0 && playerColumn == 1) {
+      board01 = playerTwo;
+    } else if (playerRow == 0 && playerColumn == 2) {
+      board02 = playerTwo;
+    } else if (playerRow == 1 && playerColumn == 0) {
+      board03 = playerTwo;
+    } else if (playerRow == 1 && playerColumn == 1) {
+      board04 = playerTwo;
+    } else if (playerRow == 1 && playerColumn == 2) {
+      board05 = playerTwo;
+    } else if (playerRow == 2 && playerColumn == 0) {
+      board06 = playerTwo;
+    } else if (playerRow == 2 && playerColumn == 1) {
+      board07 = playerTwo;
+    } else if (playerRow == 2 && playerColumn == 2) {
+      board08 = playerTwo;
+    } else {
+      System.out.println("That is not a valid move");
+    }
+    return "";
+  }
   public static void main(String args[]) {
 
     Scanner scanner = new Scanner(System.in);
@@ -76,6 +106,13 @@ public class TicTacToe {
 
     System.out.println("Player 1 choose a column: ");
     int playerColumn = scanner.nextInt();
+
+    System.out.println("Player 2 choose a row: ");
+    int playerRow = scanner.nextInt();
+
+    System.out.println("Player 2 choose a column: ");
+    int playerColumn = scanner.nextInt();
+
 
 
     //  [(0,0)] [(1,0)] [(2,0)] // is in the same row, has a constant y, has a variable column, has a variable x, // row, y = 0
